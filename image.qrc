@@ -2,5 +2,6 @@
     <qresource prefix="/">
         <file>images/who.jpg</file>
         <file>images/myicon.jpg</file>
+        <file>C:/Users/Administrator/Desktop/outwork.gif</file>
     </qresource>
 </RCC>

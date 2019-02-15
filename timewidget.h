@@ -27,7 +27,7 @@ private:
     QSettings *setting;
     int workTime;
     int countTime;//工作总时间
-
+    QTimer *timer;
     void initView();
 
 

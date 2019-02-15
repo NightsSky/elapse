@@ -23,13 +23,13 @@
     </rect>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>25</x>
      <y>49</y>
-     <width>756</width>
-     <height>161</height>
+     <width>631</width>
+     <height>176</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">

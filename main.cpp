@@ -8,7 +8,7 @@
 
 LONG ApplicationCrashHandler(EXCEPTION_POINTERS *pException){//程式异常捕获
     /*
-      ***保存数据代码***
+     ***保存数据代码***
     */
     //这里弹出一个错误对话框并退出程序
     EXCEPTION_RECORD* record = pException->ExceptionRecord;
@@ -25,11 +25,11 @@ int main(int argc, char *argv[])
     a.setQuitOnLastWindowClosed(false);
 
     QSettings setting("./ElapseData.ini", QSettings::IniFormat);
+
     SetUnhandledExceptionFilter((LPTOP_LEVEL_EXCEPTION_FILTER)ApplicationCrashHandler);//注冊异常捕获函数
    MainSettingWindow m;
    m.show();
-//    TimeWidget m;
-//    m.show();
+
 
     return a.exec();
 }

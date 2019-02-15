@@ -1,6 +1,7 @@
 #include "worktimesetwidget.h"
 #include "ui_worktimesetwidget.h"
 #include "mainsettingwindow.h"
+#include <QDebug>
 
 
 workTimeSetWidget::workTimeSetWidget(QWidget *parent) :
@@ -10,7 +11,7 @@ workTimeSetWidget::workTimeSetWidget(QWidget *parent) :
     ui->setupUi(this);
     setting = new QSettings("./ElapseData.ini", QSettings::IniFormat);
     initView();
-   // ptr = qobject_cast<MainSettingWindow*>(parent);;
+   // ptr = qobject_cast<MainSettingWindow*>(parent);
 }
 
 workTimeSetWidget::~workTimeSetWidget()
@@ -32,10 +33,20 @@ void workTimeSetWidget::initView()
 void workTimeSetWidget::on_okBtn_clicked()
 {
     if(nullptr != t ){
+
+        setting->setValue("timex",t->geometry().x());
+        setting->setValue("timey",t->geometry().y());
         t->close();
     }
     t = new TimeWidget(this);
+
     t->show();
+    int x = setting->value("timex").toInt();
+    int y = setting->value("timey").toInt();
+    qDebug()<<x<<y;
+    if(x!=0&&y!=0){
+        t->move(x,y);
+    }
 
     // 获得父部件指针，同时需要类型强转.此处有点坑
     MainSettingWindow *ptr = (MainSettingWindow *)(parentWidget()->parentWidget()->parentWidget());

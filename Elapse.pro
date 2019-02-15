@@ -30,21 +30,24 @@ SOURCES += \
     timewidget.cpp \
     mainsettingwindow.cpp \
     worktimesetwidget.cpp \
-    aboutdialog.cpp
+    aboutdialog.cpp \
+    outworkdialog.cpp
 
 HEADERS += \
     mainwidget.h \
     timewidget.h \
     mainsettingwindow.h \
     worktimesetwidget.h \
-    aboutdialog.h
+    aboutdialog.h \
+    outworkdialog.h
 
 FORMS += \
     mainwidget.ui \
     timewidget.ui \
     mainsettingwindow.ui \
     worktimesetwidget.ui \
-    aboutdialog.ui
+    aboutdialog.ui \
+    outworkdialog.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -52,6 +55,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
-    image.qrc
+    images.qrc
 RC_ICONS = myicon.ico
 LIBS += -lDbgHelp
+
+DISTFILES +=

@@ -59,7 +59,7 @@ void TimeWidget::timerUpDate()
         int percentage = workTime*100/countTime;
         ui->timeProgress->setValue(100-percentage);
     }else if(workTime==0) {
-
+        
         OutWorkDialog *outDialog = new OutWorkDialog(this);
         outDialog->show();
         outDialog->move(600,400);
